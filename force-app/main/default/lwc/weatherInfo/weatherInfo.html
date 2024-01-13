@@ -1,0 +1,73 @@
+<template>
+    <div class="container">
+        <div class="weather-header">
+           <form onsubmit={submitHandler} class="weather-search">
+            <input onchange={changeHandler} type="text" placeholder="Search for a city..." class="weather-searchform" required>
+            <img src={searchIcon}>
+            <template if:true={loadingTxt}>
+                <div class={loadingClasses}>{loadingTxt}</div>
+            </template>
+           </form>
+
+           <div class="weather-unit">
+            <span onclick={unitCHandler} class="weather-celsius">°C</span>
+            <span onclick={unitFHandler} class="weather-fahrenheit">°F</span>
+           </div>
+        </div>
+
+        <div class="weather-body">
+            <h1 class="weather-city">{response.location}</h1>
+            <div class="weather-forecast">
+                {response.description}
+            </div>
+
+            <div class="weather-icon">
+                <img src={weatherIcon}>
+            </div>
+
+            <div class="weather-temperature">
+                {response.temperature}°{tempUnit}
+            </div>
+
+            
+            <div class="weather-min-max">
+                <p>Min: {response.temp_min}°{tempUnit}</p>
+                <p>Max: {response.temp_max}°{tempUnit}</p>
+            </div>
+        </div>
+
+        <div class="weather-info">
+            <div class="weather-card">
+                <img src={tempIcon}>
+                <div>
+                    <p>Feels Like</p>
+                    <p class="weather-realfeel">{response.feels_like}°{tempUnit}</p>
+                </div>
+            </div>
+
+            <div class="weather-card">
+                <img src={humidIcon}>
+                <div>
+                    <p>Humidity</p>
+                    <p class="weather-humidity">{response.humidity}</p>
+                </div>
+            </div>
+
+            <div class="weather-card">
+                <img src={windIcon}>
+                <div>
+                    <p>Wind</p>
+                    <p class="weather-wind">{response.speed} m/s</p>
+                </div>
+            </div>
+
+            <div class="weather-card">
+                <img src={gaugeIcon}>
+                <div>
+                    <p>Pressure</p>
+                    <p class="weather-pressure">{response.pressure} hPa</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

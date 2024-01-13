@@ -1,0 +1,119 @@
+.app{
+    background: url(/sfsites/c/resource/background);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.app-card{
+    max-width: 400px;
+    border-radius: 10px;
+    min-width: 350px;   
+    background: #b2c7c0;
+    
+}
+
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header{
+    font-size: 24px;
+    font-weight: bold;
+    color: #1a1b1e;
+    padding: 16px;
+    border-bottom: 1px solid #ccc;
+}
+
+input{
+    text-align: center; 
+    padding: 16px;
+    height: 50px;
+    outline: none;
+    font-size: 22px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+input::placeholder{
+    color: #bfbfbf;
+}
+.width100{
+    width: 100%;
+}
+
+button{
+    background:#6592EC;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    border-radius: 8px;
+    color: white;
+    padding: 10px;
+}
+
+.success-msg{
+    color: #155724;
+    background: #d4edda;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.error-msg{
+    color: #721c24;
+    background: #f8d7da;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 12px;
+}
+
+.custom-icon{
+    --slds-c-icon-color-background: #6592EC;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.temp{
+    font-size: 45px;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 24px;
+}
+
+.description, .location{
+    font-size: 24px;
+    line-height: 32px;
+    padding-top: 20px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid #747474;
+}
+
+.feels-like{
+    width: 100%;
+    padding: 16px;
+}
+
+.humidity{
+    border-left: 1px solid #747474;
+    width: 100%;
+    padding: 16px;
+}
+
+.weather-image{
+    max-width: 125px;
+}
+
+.cursor{
+    cursor: pointer;
+}
+

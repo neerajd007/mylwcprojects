@@ -1,0 +1,96 @@
+<template>
+    <div class="app flex-center">
+        <div class="app-card">
+            <header class="flex-center">
+                <template if:true={response}>
+                    <img 
+                    src={arrowBackIcon}
+                    alt="back arrow" 
+                    onclick={backHandler} 
+                    class="cursor slds-m-right_medium">
+                </template>
+
+                
+                <h1>Weather App</h1>
+            </header>   
+            <template if:true={loadingTxt}>
+                <div class={loadingClasses}>{loadingTxt}</div>
+            </template>
+
+            <!-- Home Page -->
+            <template if:false={response}>
+                <section class="slds-m-around_large">
+                    <form onsubmit={submitHandler}>
+        
+                        <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                            <svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+                              <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                            </svg>
+                            <input 
+                            class="width100" 
+                            type="text" 
+                            placeholder="Enter city name" 
+                            required 
+                            spellcheck="false"
+                            onkeyup={searchHandler} />
+    
+                        </div>
+                        
+                        <div class="flex-center slds-m-top_large">
+                            <button type="Submit">
+                                Get Weather
+                            </button>  
+                        </div>
+                                        
+                    </form>
+                </section>
+            </template>
+            
+
+            <!-- result section -->
+            <template if:true={response}>
+                <section class="text-center slds-m-around_large">
+                    <!-- image -->
+                    <img src={weatherIcon} alt="weather icon" class="weather-image">
+                    <div class="temp">
+                        
+                        <span>{response.temperature}</span>
+                        <span>°</span>C/ 
+                        <span>{tmpF}</span>
+                        <span>°</span>F
+                        
+                    </div>
+                    <div class="description">{response.description}</div>
+                    
+                    <div class="location">
+                        <!-- icon here -->
+                        <img src={mapIcon} alt="loocation icon">
+                        <span>{response.location}</span>
+                    </div>
+                </section>
+    
+                <footer>
+                    <div class="feels-like">
+                        <div>
+                            <img src={thermoemeterIcon} alt="thermoemeter icon">
+                            <div>{response.feels_like}°C</div>
+                        </div>
+                    <p>feels like</p>
+                    </div>
+    
+                    <div class="humidity">
+                        <div>
+                            <img src={dropletIcon} alt="thermoemeter icon">
+                            <div>{response.humidity}</div>
+                        </div>
+                        <p>Humidity</p>
+                    </div>
+                    
+                </footer>
+            
+                
+            </template>
+            
+        </div>
+    </div>   
+</template>
