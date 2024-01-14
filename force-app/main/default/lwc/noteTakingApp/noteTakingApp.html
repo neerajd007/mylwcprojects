@@ -28,7 +28,15 @@
                             onclick={editNoteHandler} 
                             data-recordid={note.Id}>
                         </lightning-icon>
-                        <lightning-icon class="custom-del-icon cursor" icon-name='action:delete' alternative-text='delete' size='xx-small' title='delete note'></lightning-icon>
+                        <lightning-icon 
+                            class="custom-del-icon cursor" 
+                            icon-name='action:delete' 
+                            alternative-text='delete' 
+                            size='xx-small' 
+                            title='delete note'
+                            onclick={deleteNoteHandler}
+                            data-recordid={note.Id}>
+                        </lightning-icon>
                     </div>
                 </footer>
             </div>

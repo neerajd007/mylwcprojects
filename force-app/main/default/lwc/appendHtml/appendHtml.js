@@ -12,6 +12,9 @@ export default class AppendHtml extends LightningElement {
 
     set result(data){
         this._result=data
+        if(this.isLoaded){
+            this.attachHtml();
+        }
     }
 
     renderedCallback(){
